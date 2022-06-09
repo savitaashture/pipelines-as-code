@@ -9,8 +9,8 @@ having to generate a new code iteration.
 
 ## Incoming Webhook URL
 
-You need to set your incoming match your Repository CRD, in your match you
-specify a reference Secret which will be used as a shared secret and the
+In your Repository CRD you will need to setup the incoming rules, where you
+reference a kubernetes Secret used as a shared secret on the URL  and the
 branches targetted by the incoming webhook.
 
 {{< hint danger >}}
@@ -18,6 +18,15 @@ you will need to have a git_provider spec to specify a token when using the
 github-apps method the same way we are doing for github-webhook method. Refer to
 the [github webhook documentation](/docs/install/github_webhook) for how to set
 this up.
+
+Additionally since we are not able to detect automatically the type of provider
+on URL. You will need to add it to the `git_provider.type` spec. Supported
+values are:
+
+- github
+- gitlab
+- bitbucket-cloud
+
 {{< /hint >}}
 
 Here is an example of a Repository CRD matching the target branch main:
