@@ -32,7 +32,7 @@ func main() {
 
 	kinteract, err := kubeinteraction.NewKubernetesInteraction(run)
 	if err != nil {
-		log.Fatal("failed to init kinit client : ", err)
+		log.Fatal("failed to init kinit client11 : ", err)
 	}
 
 	loggerConfiguratorOpt := evadapter.WithLoggerConfiguratorConfigMapName(logging.ConfigMapName())
