@@ -4,7 +4,7 @@ title: An opinionated CI based on OpenShift Pipelines / Tekton
 ---
 # Pipelines-as-Code
 
-An opinionated CI based on OpenShift Pipelines / Tekton.
+An opinionated CI based on OpenShift Pipelines / Tekton.1
 
 ## Introduction
 
