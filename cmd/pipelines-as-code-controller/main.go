@@ -27,7 +27,7 @@ func main() {
 	rinfo.Controller = info.GetControllerInfoFromEnvOrDefault()
 	err := run.Clients.NewClients(ctx, rinfo)
 	if err != nil {
-		log.Fatal("failed to init clients : ", err)
+		log.Fatal("failed to init clients11 : ", err)
 	}
 
 	kinteract, err := kubeinteraction.NewKubernetesInteraction(run)
