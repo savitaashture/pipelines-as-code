@@ -1,0 +1,13 @@
+---
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: pr-bundle
+spec:
+  pipelineRef:
+    resolver: bundles
+    params:
+      - name: bundle
+        value: quay.io/hello/moto
+      - name: name
+        value: pipeline-test1
