@@ -5,21 +5,20 @@ metadata:
   annotations:
     build.appstudio.openshift.io/repo: https://github.com/openshift-pipelines/pac-downstream?rev={{revision}}
     build.appstudio.redhat.com/commit_sha: '{{revision}}'
-    build.appstudio.redhat.com/pull_request_number: '{{pull_request_number}}'
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     pipelinesascode.tekton.dev/max-keep-runs: "3"
-    pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request" && target_branch
-      == "main" &&
+    pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch
+      == "next" &&
       ("upstream/***".pathChanged() || ".konflux/patches/***".pathChanged() || ".konflux/rpms/***".pathChanged() ||
-      ".konflux/dockerfiles/watcher.Dockerfile".pathChanged() ||
-      ".tekton/pac-downstream-main-watcher-pull-request.yaml".pathChanged() ||
+      ".konflux/dockerfiles/cli.Dockerfile".pathChanged() ||
+      ".tekton/pac-downstream-next-cli-push.yaml".pathChanged() ||
       ".tekton/docker-build-ta.yaml".pathChanged())
   creationTimestamp: null
   labels:
-    appstudio.openshift.io/application: pac-downstream-main
-    appstudio.openshift.io/component: pac-downstream-main-watcher
+    appstudio.openshift.io/application: pac-downstream-next
+    appstudio.openshift.io/component: pac-downstream-next-cli
     pipelines.appstudio.openshift.io/type: build
-  name: pac-downstream-main-watcher-on-pull-request
+  name: pac-downstream-next-cli-on-push
   namespace: tekton-ecosystem-tenant
 spec:
   params:
@@ -28,14 +27,9 @@ spec:
   - name: revision
     value: '{{revision}}'
   - name: output-image
-    value: quay.io/redhat-user-workloads/tekton-ecosystem-tenant/pac-downstream-main/watcher:on-pr-{{revision}}
-  - name: image-expires-after
-    value: 5d
+    value: quay.io/redhat-user-workloads/tekton-ecosystem-tenant/pac-downstream-next/cli:{{revision}}
   - name: dockerfile
-    value: .konflux/dockerfiles/watcher.Dockerfile
-  - name: build-platforms
-    value:
-      - linux/x86_64
+    value: .konflux/dockerfiles/cli.Dockerfile
   - name: prefetch-input
     value: |
       {"type": "rpm", "path": ".konflux/rpms"}
