@@ -32,8 +32,9 @@ LABEL \
       io.k8s.description="Red Hat OpenShift Pipelines Pipelines as Code Webhook" \
       io.openshift.tags="pipelines,tekton,openshift"
 
-RUN microdnf install -y shadow-utils
-RUN groupadd -r -g 65532 nonroot && useradd --no-log-init -r -u 65532 -g nonroot nonroot
+RUN microdnf install -y shadow-utils && \
+    groupadd -r -g 65532 nonroot && \
+    useradd --no-log-init -r -u 65532 -g nonroot nonroot
 USER 65532
 
 ENTRYPOINT ["/ko-app/pipelines-as-code-webhook"]
