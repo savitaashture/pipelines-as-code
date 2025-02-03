@@ -14,7 +14,7 @@ RUN go build -mod=vendor -tags disable_gcp -v  \
     -o /tmp/tkn-pac ./cmd/tkn-pac
 
 FROM $RUNTIME
-ARG VERSION=pipelines-as-code-cli-main
+ARG VERSION=pipelines-as-code-cli-1.18
 
 COPY --from=builder /tmp/tkn-pac /usr/bin
 
