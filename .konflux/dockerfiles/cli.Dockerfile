@@ -20,7 +20,7 @@ COPY --from=builder /tmp/tkn-pac /usr/bin
 
 LABEL \
       com.redhat.component="openshift-pipelines-cli-tkn-pac-container" \
-      name="openshift-pipelines/pipelines-cli-tkn-pac-rhel8" \
+      name="openshift-pipelines/pipelines-cli-tkn-pac-rhel9" \
       version=$VERSION \
       summary="Red Hat OpenShift pipelines tkn pac CLI" \
       maintainer="pipelines-extcomm@redhat.com" \
