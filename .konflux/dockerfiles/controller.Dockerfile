@@ -23,7 +23,7 @@ COPY head ${KO_DATA_PATH}/HEAD
 
 LABEL \
       com.redhat.component="openshift-pipelines-pipelines-as-code-controller-container" \
-      name="openshift-pipelines/pipelines-pipelines-as-code-controller-rhel8" \
+      name="openshift-pipelines/pipelines-pipelines-as-code-controller-rhel9" \
       version=$VERSION \
       summary="Red Hat OpenShift Pipelines Pipelines as Code Controller" \
       maintainer="pipelines-extcomm@redhat.com" \

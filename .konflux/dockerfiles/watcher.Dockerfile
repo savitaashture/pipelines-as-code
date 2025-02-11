@@ -23,7 +23,7 @@ COPY head ${KO_DATA_PATH}/HEAD
 
 LABEL \
       com.redhat.component="openshift-pipelines-pipelines-as-code-watcher-container" \
-      name="openshift-pipelines/pipelines-as-code-watcher-rhel8" \
+      name="openshift-pipelines/pipelines-as-code-watcher-rhel9" \
       version=$VERSION \
       summary="Red Hat OpenShift Pipelines Pipelines as Code Watcher" \
       maintainer="pipelines-extcomm@redhat.com" \

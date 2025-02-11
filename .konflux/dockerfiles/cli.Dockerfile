@@ -3,7 +3,7 @@ ARG RUNTIME=registry.access.redhat.com/ubi9/ubi-minimal:latest@sha256:66b99214cb
 
 FROM $GO_BUILDER AS builder
 
-ARG TKN_PAC_VERSION=nightly
+ARG TKN_PAC_VERSION=0.32.0
 WORKDIR /go/src/github.com/openshift-pipelines/pipelines-as-code
 COPY upstream .
 COPY .konflux/patches patches/
