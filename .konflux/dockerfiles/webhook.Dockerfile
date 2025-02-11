@@ -23,7 +23,7 @@ COPY head ${KO_DATA_PATH}/HEAD
 
 LABEL \
       com.redhat.component="openshift-pipelines-pipelines-as-code-webhook-container" \
-      name="openshift-pipelines/pipelines-pipelines-as-code-webhook-rhel8" \
+      name="openshift-pipelines/pipelines-pipelines-as-code-webhook-rhel9" \
       version=$VERSION \
       summary="Red Hat OpenShift Pipelines Pipelines as Code Webhook" \
       maintainer="pipelines-extcomm@redhat.com" \
